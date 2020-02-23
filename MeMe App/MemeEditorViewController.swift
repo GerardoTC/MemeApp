@@ -112,7 +112,7 @@ class MemeEditorViewController: UIViewController {
             return
         }
         if sourceType == .camera, !cameraPermission {
-            self.showAlert(title: Constants.Alert.unavailableCamera, message: "Please go to your settings and let meme app take photos to create your fabulous Memes")
+            self.showAlert(title: Constants.Alert.unavailableCamera, message: Constants.Alert.cameraInstructions)
             return
         }
         pickerController.sourceType = sourceType
