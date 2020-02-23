@@ -60,7 +60,6 @@ class MemeEditorViewController: UIViewController {
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
         shareButton.isEnabled = false
-        
     }
     
     @IBAction func shareMeme() {

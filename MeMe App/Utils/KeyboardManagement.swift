@@ -11,7 +11,7 @@ import UIKit
 
 class KeyboardManagement {
     var view: UIView!
-    
+
     func subscribeToKeyBoardNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -33,7 +33,7 @@ class KeyboardManagement {
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        guard let selectedTextField = self.view.selectedTextField,
+        guard let selectedTextField = view.selectedTextField,
             self.view.frame.origin.y == 0 else {
                 return
         }
