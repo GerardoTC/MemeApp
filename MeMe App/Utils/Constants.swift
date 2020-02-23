@@ -17,6 +17,7 @@ struct Constants {
         static let unkonwnError = "Unkown Error"
         static let permissionNotGranted = "Permission not granted"
         static let instructions = "Please go to your settings and let meme app the permission for write images"
+        static let cameraInstructions = "Please go to your settings and let meme app take photos to create your fabulous Memes"
     }
     
     struct TextFields {

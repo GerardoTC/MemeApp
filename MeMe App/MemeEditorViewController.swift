@@ -21,6 +21,7 @@ class MemeEditorViewController: UIViewController {
     let textFieldDelegate = MemeTextFieldDelegate()
     let keyboardManagement = KeyboardManagement()
     var photoLibraryPermission = false
+    var cameraPermission = false
     
     // MARK:  Life cycle methods
     override func viewDidLoad() {
@@ -87,8 +88,14 @@ class MemeEditorViewController: UIViewController {
     
     // MARK:  Private methods
     private func checkPermissions() {
+        //PhotoLibrary
         PHPhotoLibrary.requestAuthorization { [weak self] (status) in
             self?.photoLibraryPermission = status == .authorized ? true : false
+        }
+        
+        //Camera
+        AVCaptureDevice.requestAccess(for: AVMediaType.video) { [weak self] response in
+            self?.cameraPermission = response
         }
     }
     
@@ -104,6 +111,11 @@ class MemeEditorViewController: UIViewController {
             }
             return
         }
+        if sourceType == .camera, !cameraPermission {
+            self.showAlert(title: Constants.Alert.unavailableCamera, message: "Please go to your settings and let meme app take photos to create your fabulous Memes")
+            return
+        }
+        pickerController.sourceType = sourceType
         pickerController.mediaTypes = [Constants.MediaTypes.imageType]
         present(pickerController, animated: true, completion: nil)
     }
