@@ -15,6 +15,7 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var memeView: UIView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     // MARK:  Constants/Vars
     let pickerController = UIImagePickerController()
@@ -61,6 +62,7 @@ class MemeEditorViewController: UIViewController {
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
         shareButton.isEnabled = false
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
     
     @IBAction func shareMeme() {
@@ -102,8 +104,6 @@ class MemeEditorViewController: UIViewController {
     private func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType)  else {
             switch sourceType {
-            case .camera:
-                self.showAlert(title: Constants.Alert.unavailableCamera)
             case .photoLibrary:
                 self.showAlert(title: Constants.Alert.unavailablePhotoLibrary)
             default:
