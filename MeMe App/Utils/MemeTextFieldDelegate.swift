@@ -11,8 +11,9 @@ import UIKit
 
 class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if let text = textField.text, text == "TOP" || text == "BOTTOM" {
-            textField.text = ""
+        if let text = textField.text,
+            text == Constants.TextFields.defaultTopText || text == Constants.TextFields.defaultBottomText {
+            textField.text = String()
         }
     }
     

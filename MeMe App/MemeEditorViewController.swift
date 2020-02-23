@@ -54,8 +54,8 @@ class MemeEditorViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         pickerController.delegate = self
         keyboardManagement.view = self.view
-        topTextField.setupMemeText("TOP")
-        bottomTextField.setupMemeText("BOTTOM")
+        topTextField.setupMemeText(Constants.TextFields.defaultTopText)
+        bottomTextField.setupMemeText(Constants.TextFields.defaultBottomText)
         imageView.image = nil
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
@@ -64,7 +64,8 @@ class MemeEditorViewController: UIViewController {
     
     @IBAction func shareMeme() {
         guard photoLibraryPermission else {
-            print("Permission Not granted")
+            self.showAlert(title: Constants.Alert.permissionNotGranted,
+                           message: Constants.Alert.instructions)
             return
         }
         let memedImage = memeView.screehShot ?? UIImage()
@@ -93,7 +94,14 @@ class MemeEditorViewController: UIViewController {
     
     private func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
         guard UIImagePickerController.isSourceTypeAvailable(sourceType)  else {
-            print("Photo library is not available")
+            switch sourceType {
+            case .camera:
+                self.showAlert(title: Constants.Alert.unavailableCamera)
+            case .photoLibrary:
+                self.showAlert(title: Constants.Alert.unavailablePhotoLibrary)
+            default:
+                self.showAlert(title: Constants.Alert.unkonwnError)
+            }
             return
         }
         pickerController.mediaTypes = [Constants.MediaTypes.imageType]
@@ -124,7 +132,6 @@ extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigatio
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("Cancel")
         dismiss(animated: true, completion: nil)
     }
 }
