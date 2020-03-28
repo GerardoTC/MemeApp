@@ -124,10 +124,12 @@ class MemeEditorViewController: UIViewController {
         let originalImage = self.imageView.image ?? UIImage()
         let topText =  topTextField.text ?? String()
         let bottomText =  bottomTextField.text ?? String()
-        let _ = Meme(topText: topText,
-                     bottomText: bottomText,
-                     memedImage: memedImage,
-                     originalImage: originalImage)
+        let meme = Meme(topText: topText,
+                        bottomText: bottomText,
+                        memedImage: memedImage,
+                        originalImage: originalImage)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.memes.append(meme)
     }
     
 }
