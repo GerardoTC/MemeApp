@@ -10,11 +10,23 @@ import UIKit
 
 class MemeCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var emptyMemesLabel: UILabel!
     // MARK: - Properties
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     var memes: [Meme] {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         return appDelegate?.memes ?? []
+    }
+    
+    //MARK: - View Updates
+    func showEmptyViewIfNeeded() {
+        if memes.count > 0 {
+            collectionView.isHidden = false
+            emptyMemesLabel.isHidden = true
+        } else {
+            collectionView.isHidden = true
+            emptyMemesLabel.isHidden = false
+        }
     }
     
     override func viewDidLoad() {
@@ -36,6 +48,7 @@ class MemeCollectionViewController: UIViewController {
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        showEmptyViewIfNeeded()
         collectionView.reloadData()
     }
 }
