@@ -11,6 +11,7 @@ import UIKit
 class MemeCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     // MARK: - Properties
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     var memes: [Meme] {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         return appDelegate?.memes ?? []
@@ -24,16 +25,13 @@ class MemeCollectionViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
-            return
-        }
         let space:CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        layout.minimumInteritemSpacing = space
-        layout.minimumLineSpacing = space
-        layout.itemSize = CGSize(width: dimension, height: dimension)
-        layout.prepare()
-        layout.invalidateLayout()
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        flowLayout.prepare()
+        flowLayout.invalidateLayout()
     }
         
     override func viewWillAppear(_ animated: Bool) {

@@ -43,6 +43,7 @@
                     <navigationItem key="navigationItem" id="nZu-dx-Bka"/>
                     <connections>
                         <outlet property="collectionView" destination="YCD-vi-9yJ" id="WuM-IS-FEl"/>
+                        <outlet property="flowLayout" destination="qNB-RR-Z8w" id="XsS-uz-Mjc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGC-GS-mlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
