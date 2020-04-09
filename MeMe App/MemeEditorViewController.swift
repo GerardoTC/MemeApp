@@ -16,6 +16,8 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var memeView: UIView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     
     // MARK:  Constants/Vars
     let pickerController = UIImagePickerController()
@@ -30,6 +32,16 @@ class MemeEditorViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupDefaultView()
         
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if heightConstraint.constant > view.frame.height {
+            heightConstraint.constant = view.frame.height - 100
+        }
+        if widthConstraint.constant > view.frame.width {
+            widthConstraint.constant = view.frame.width - 20
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

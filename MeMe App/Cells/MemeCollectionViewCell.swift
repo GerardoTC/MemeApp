@@ -9,15 +9,15 @@
 import UIKit
 
 class MemeCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var memedImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func set(image: UIImage) {
-        memedImage.contentMode = .scaleToFill
         memedImage.image = image
+        memedImage.contentMode = .scaleAspectFill
     }
 }
