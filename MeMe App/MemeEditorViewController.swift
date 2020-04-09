@@ -130,6 +130,7 @@ class MemeEditorViewController: UIViewController {
                         originalImage: originalImage)
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         appDelegate?.memes.append(meme)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

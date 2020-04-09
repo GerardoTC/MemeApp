@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370DF47B242FDE1A00B9FA0C /* MemeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370DF47A242FDE1A00B9FA0C /* MemeTableViewController.swift */; };
+		370DF47D242FE42A00B9FA0C /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370DF47C242FE42A00B9FA0C /* TabsViewController.swift */; };
 		375BF5212402EEF100E5E30A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375BF5202402EEF100E5E30A /* Constants.swift */; };
 		375BF5232402F03A00E5E30A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375BF5222402F03A00E5E30A /* UIViewControllerExtensions.swift */; };
 		3783759C23FCD77500FA7B1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3783759B23FCD77500FA7B1B /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370DF47A242FDE1A00B9FA0C /* MemeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewController.swift; sourceTree = "<group>"; };
+		370DF47C242FE42A00B9FA0C /* TabsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		375BF5202402EEF100E5E30A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		375BF5222402F03A00E5E30A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		3783759823FCD77500FA7B1B /* MeMe App .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeMe App .app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,8 @@
 				378375A423FCD77600FA7B1B /* Assets.xcassets */,
 				378375A623FCD77600FA7B1B /* LaunchScreen.storyboard */,
 				378375A923FCD77600FA7B1B /* Info.plist */,
+				370DF47A242FDE1A00B9FA0C /* MemeTableViewController.swift */,
+				370DF47C242FE42A00B9FA0C /* TabsViewController.swift */,
 			);
 			path = "MeMe App";
 			sourceTree = "<group>";
@@ -183,6 +189,8 @@
 				37BF7957240096D900C6857B /* TextFieldExtensions.swift in Sources */,
 				375BF5212402EEF100E5E30A /* Constants.swift in Sources */,
 				37BF795A2400A41700C6857B /* MemeTextFieldDelegate.swift in Sources */,
+				370DF47D242FE42A00B9FA0C /* TabsViewController.swift in Sources */,
+				370DF47B242FDE1A00B9FA0C /* MemeTableViewController.swift in Sources */,
 				37BF796324021B3200C6857B /* Meme.swift in Sources */,
 				37BF795E240214D300C6857B /* UIViewExtensions.swift in Sources */,
 			);
