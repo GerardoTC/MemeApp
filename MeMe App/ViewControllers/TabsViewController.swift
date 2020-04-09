@@ -12,6 +12,7 @@ class TabsViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Sent Memes"
 
         // Do any additional setup after loading the view.
     }

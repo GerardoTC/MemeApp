@@ -54,3 +54,14 @@ extension MemeCollectionViewController: UICollectionViewDataSource {
     
     
 }
+
+extension MemeCollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        guard let detailMemeVC = storyboard?.instantiateViewController(withIdentifier: Constants.storyBoardsIdentifiers.detailMemeView) as? MemeDetailViewController else {
+            return
+        }
+        detailMemeVC.meme = memes[indexPath.row]
+        self.navigationController?.pushViewController(detailMemeVC, animated: true)
+    }
+}

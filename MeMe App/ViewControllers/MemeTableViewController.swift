@@ -68,6 +68,10 @@ extension MemeTableViewController: UITableViewDataSource {
 extension MemeTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        storyboard?.instantiateViewController(withIdentifier: Constants.storyBoardsIdentifiers.detailMemeView)
+        guard let detailMemeVC = storyboard?.instantiateViewController(withIdentifier: Constants.storyBoardsIdentifiers.detailMemeView) as? MemeDetailViewController else {
+            return
+        }
+        detailMemeVC.meme = memes[indexPath.row]
+        self.navigationController?.pushViewController(detailMemeVC, animated: true)
     }
 }

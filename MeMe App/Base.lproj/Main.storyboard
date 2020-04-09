@@ -27,6 +27,7 @@
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="C7i-4a-IZj" id="hov-V8-sqK"/>
+                                    <outlet property="delegate" destination="C7i-4a-IZj" id="oTB-b0-4Gk"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -63,6 +64,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="AvS-FC-qa4" id="h2l-JX-pg1"/>
+                                    <outlet property="delegate" destination="AvS-FC-qa4" id="X0u-3v-6UB"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Memes created, please press + button to create one" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyB-3F-SYI">
