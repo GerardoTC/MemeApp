@@ -10,7 +10,6 @@ import UIKit
 
 class MemeCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionFlow: UICollectionViewFlowLayout!
     // MARK: - Properties
     var memes: [Meme] {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -21,29 +20,18 @@ class MemeCollectionViewController: UIViewController {
         super.viewDidLoad()
         let uiNib = UINib(nibName: "MemeCollectionViewCell", bundle: Bundle(for: MemeCollectionViewController.self))
         collectionView.register(uiNib, forCellWithReuseIdentifier: "MemeCollectionViewCell")
-        
-        
-        // Do any additional setup after loading the view.
     }
 
     override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-
-
-    guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else
-    {
-        return
-    }
-
+        super.viewDidLayoutSubviews()
+        guard let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            return
+        }
         let space:CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
-        
         layout.minimumInteritemSpacing = space
         layout.minimumLineSpacing = space
         layout.itemSize = CGSize(width: dimension, height: dimension)
-    layout.prepare()  // <-- call prepare before invalidateLayout
-    layout.invalidateLayout()
-        
     }
         
     override func viewWillAppear(_ animated: Bool) {

@@ -38,10 +38,9 @@ class KeyboardManagement {
                 return
         }
         let keyBoardFrame = getKeyboardFrame(notification)
-        let textFieldFrame = selectedTextField.frame
-        let distanceY = (textFieldFrame.origin.y + textFieldFrame.height) - keyBoardFrame.origin.y
-        if keyBoardFrame.origin.y < textFieldFrame.origin.y {
-            self.view.frame.origin.y -= keyBoardFrame.height - distanceY/2
+        let relatedPosition = selectedTextField.convert(keyBoardFrame, from: nil)
+        if relatedPosition.origin.y <= 0 {
+            self.view.frame.origin.y += relatedPosition.origin.y - selectedTextField.frame.height
         }
 
     }

@@ -18,6 +18,6 @@ class MemeCollectionViewCell: UICollectionViewCell {
     
     func set(image: UIImage) {
         memedImage.image = image
-        memedImage.contentMode = .scaleAspectFill
+        memedImage.contentMode = .scaleAspectFit
     }
 }

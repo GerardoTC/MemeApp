@@ -235,6 +235,7 @@
                         <outlet property="heightConstraint" destination="2zi-0f-tP6" id="oWZ-HQ-Dhm"/>
                         <outlet property="imageView" destination="IDr-at-fSN" id="MqC-Fd-38S"/>
                         <outlet property="memeView" destination="T8T-a6-B5N" id="LrF-Zr-ZMi"/>
+                        <outlet property="navBar" destination="l3Q-W8-9sF" id="Ns1-xu-uaI"/>
                         <outlet property="shareButton" destination="ull-BF-ShM" id="0hN-vg-O2E"/>
                         <outlet property="topTextField" destination="fFf-Py-nQ3" id="tH3-Jz-Mgf"/>
                         <outlet property="widthConstraint" destination="CkE-gR-vg8" id="uGj-kq-uxl"/>

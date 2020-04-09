@@ -27,8 +27,8 @@ class MemeTableViewCell: UITableViewCell {
     func setupCellWith(meme: Meme) {
         topText.text = meme.topText
         bottomText.text = meme.bottomText
-        memeImage.contentMode = .scaleAspectFill
-        memeImage.image = meme.originalImage
+        memeImage.contentMode = .scaleAspectFit
+        memeImage.image = meme.memedImage
 
     }
     

@@ -18,7 +18,7 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var navBar: UINavigationBar!
     // MARK:  Constants/Vars
     let pickerController = UIImagePickerController()
     let textFieldDelegate = MemeTextFieldDelegate()
@@ -37,10 +37,10 @@ class MemeEditorViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if heightConstraint.constant > view.frame.height {
-            heightConstraint.constant = view.frame.height - 100
+            heightConstraint.constant = view.frame.height - (navBar.frame.height * 2) 
         }
         if widthConstraint.constant > view.frame.width {
-            widthConstraint.constant = view.frame.width - 20
+            widthConstraint.constant = view.frame.width - 5
         }
     }
     
