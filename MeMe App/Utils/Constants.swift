@@ -29,4 +29,12 @@ struct Constants {
            static let imageType = "public.image"
            static let videType = "public.video"
        }
+    
+    struct NibNames {
+        static let memeTableCell = "MemeTableViewCell"
+    }
+    
+    struct ReuseIdentifiers {
+        static let memeTableCell = "memeTableCell"
+    }
 }

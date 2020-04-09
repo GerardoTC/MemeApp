@@ -15,6 +15,7 @@ protocol ReloadInfoDelegate {
 class MemeTableViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyMemesLabel: UILabel!
     
     // MARK: - Properties
     var memes: [Meme] {
@@ -25,11 +26,30 @@ class MemeTableViewController: UIViewController {
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerCell()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        showEmptyViewIfNeeded()
     }
+    //MARK: - View Updates
+    func showEmptyViewIfNeeded() {
+        if memes.count > 0 {
+            tableView.isHidden = false
+            emptyMemesLabel.isHidden = true
+        } else {
+            tableView.isHidden = true
+            emptyMemesLabel.isHidden = false
+        }
+    }
+    //MARK: - CellRegistration
+    func registerCell() {
+        let bundle = Bundle(for: MemeTableViewController.self)
+        let nib = UINib(nibName: Constants.NibNames.memeTableCell, bundle: bundle)
+        tableView.register(nib, forCellReuseIdentifier: Constants.ReuseIdentifiers.memeTableCell)
+    }
+    
 }
 
 extension MemeTableViewController: UITableViewDataSource {
@@ -39,10 +59,8 @@ extension MemeTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let meme = memes[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")
-        cell?.imageView?.image = meme.memedImage
-        cell?.textLabel?.text = meme.topText
-        cell?.detailTextLabel?.text = meme.bottomText
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.ReuseIdentifiers.memeTableCell) as? MemeTableViewCell
+        cell?.setupCellWith(meme: meme)
         return cell ?? UITableViewCell()
     }
 }
