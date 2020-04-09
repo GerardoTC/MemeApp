@@ -38,10 +38,11 @@ class MemeCollectionViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let space:CGFloat = 3.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        let dimension = (collectionView.frame.size.width - (2 * space) - 10) / 3.0
         flowLayout.minimumInteritemSpacing = space
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: dimension)
+        collectionView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         flowLayout.prepare()
         flowLayout.invalidateLayout()
     }
@@ -62,7 +63,7 @@ extension MemeCollectionViewController: UICollectionViewDataSource {
         let meme = memes[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseIdentifiers.memeCollectionCell, for: indexPath) as? MemeCollectionViewCell
         cell?.set(image: meme.memedImage)
-        return cell!
+        return cell ?? UICollectionViewCell()
     }
     
     

@@ -21,9 +21,9 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t8P-Yc-z2d">
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="t8P-Yc-z2d" secondAttribute="trailing" id="acJ-VC-5mi"/>
                             <constraint firstItem="t8P-Yc-z2d" firstAttribute="top" secondItem="GTK-hw-YUo" secondAttribute="top" id="cym-dH-JZz"/>
