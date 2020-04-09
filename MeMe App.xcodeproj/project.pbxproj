@@ -84,20 +84,17 @@
 		3783759A23FCD77500FA7B1B /* MeMe App */ = {
 			isa = PBXGroup;
 			children = (
+				37D0FFA8243FB03900E2F142 /* Models */,
+				37D0FFA7243FB01D00E2F142 /* ViewControllers */,
 				37D0FF8D243F695500E2F142 /* Cells */,
 				37BF795F2402164C00C6857B /* Extensions */,
 				37BF79582400A3B800C6857B /* Utils */,
 				3783759B23FCD77500FA7B1B /* AppDelegate.swift */,
 				3783759D23FCD77500FA7B1B /* SceneDelegate.swift */,
-				3783759F23FCD77500FA7B1B /* MemeEditorViewController.swift */,
-				37BF796224021B3200C6857B /* Meme.swift */,
 				378375A123FCD77500FA7B1B /* Main.storyboard */,
 				378375A423FCD77600FA7B1B /* Assets.xcassets */,
 				378375A623FCD77600FA7B1B /* LaunchScreen.storyboard */,
 				378375A923FCD77600FA7B1B /* Info.plist */,
-				370DF47A242FDE1A00B9FA0C /* MemeTableViewController.swift */,
-				370DF47C242FE42A00B9FA0C /* TabsViewController.swift */,
-				37D0FF98243F774C00E2F142 /* MemeCollectionViewController.swift */,
 			);
 			path = "MeMe App";
 			sourceTree = "<group>";
@@ -131,6 +128,25 @@
 				37D0FF9D243F885700E2F142 /* MemeCollectionViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		37D0FFA7243FB01D00E2F142 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3783759F23FCD77500FA7B1B /* MemeEditorViewController.swift */,
+				370DF47A242FDE1A00B9FA0C /* MemeTableViewController.swift */,
+				37D0FF98243F774C00E2F142 /* MemeCollectionViewController.swift */,
+				370DF47C242FE42A00B9FA0C /* TabsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		37D0FFA8243FB03900E2F142 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37BF796224021B3200C6857B /* Meme.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
