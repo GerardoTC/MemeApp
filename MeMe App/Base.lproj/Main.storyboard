@@ -246,6 +246,35 @@
             </objects>
             <point key="canvasLocation" x="-104.34782608695653" y="170.75892857142856"/>
         </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="hBR-wq-B1b">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="7No-oC-fdT" customClass="MemeDetailViewController" customModule="MeMe_App_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rr3-hA-fMs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DtZ-h7-CAG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DtZ-h7-CAG" firstAttribute="leading" secondItem="8yc-lZ-JZn" secondAttribute="leading" id="Ih4-ay-XvO"/>
+                            <constraint firstItem="8yc-lZ-JZn" firstAttribute="trailing" secondItem="DtZ-h7-CAG" secondAttribute="trailing" id="RN5-Ib-lvn"/>
+                            <constraint firstItem="8yc-lZ-JZn" firstAttribute="bottom" secondItem="DtZ-h7-CAG" secondAttribute="bottom" id="TIY-gE-OCC"/>
+                            <constraint firstItem="DtZ-h7-CAG" firstAttribute="top" secondItem="8yc-lZ-JZn" secondAttribute="top" id="v8Y-am-APR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8yc-lZ-JZn"/>
+                    </view>
+                    <connections>
+                        <outlet property="memedImage" destination="DtZ-h7-CAG" id="jid-zR-DZQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SmF-a9-fG5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630" y="171"/>
+        </scene>
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="64" height="44"/>
