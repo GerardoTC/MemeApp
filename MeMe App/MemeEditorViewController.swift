@@ -36,8 +36,8 @@ class MemeEditorViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if heightConstraint.constant > view.frame.height {
-            heightConstraint.constant = view.frame.height - (navBar.frame.height * 2) 
+        if heightConstraint.constant > view.frame.height - (navBar.frame.height * 2){
+            heightConstraint.constant = view.frame.height - (navBar.frame.height * 2.5)
         }
         if widthConstraint.constant > view.frame.width {
             widthConstraint.constant = view.frame.width - 5

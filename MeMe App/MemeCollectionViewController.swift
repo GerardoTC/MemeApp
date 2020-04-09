@@ -32,6 +32,8 @@ class MemeCollectionViewController: UIViewController {
         layout.minimumInteritemSpacing = space
         layout.minimumLineSpacing = space
         layout.itemSize = CGSize(width: dimension, height: dimension)
+        layout.prepare()
+        layout.invalidateLayout()
     }
         
     override func viewWillAppear(_ animated: Bool) {
