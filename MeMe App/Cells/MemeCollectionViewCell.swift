@@ -19,5 +19,8 @@ class MemeCollectionViewCell: UICollectionViewCell {
     func set(image: UIImage) {
         memedImage.image = image
         memedImage.contentMode = .scaleAspectFit
+        memedImage.layer.cornerRadius = 10
+        memedImage.layer.borderColor = UIColor.black.cgColor
+        memedImage.layer.borderWidth = 5
     }
 }

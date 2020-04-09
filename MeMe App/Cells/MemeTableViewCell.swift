@@ -10,7 +10,7 @@ import UIKit
 
 class MemeTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var memedImage: UIImageView!
     @IBOutlet weak var topText: UILabel!
     @IBOutlet weak var bottomText: UILabel!
     
@@ -27,9 +27,11 @@ class MemeTableViewCell: UITableViewCell {
     func setupCellWith(meme: Meme) {
         topText.text = meme.topText
         bottomText.text = meme.bottomText
-        memeImage.contentMode = .scaleAspectFit
-        memeImage.image = meme.memedImage
-
+        memedImage.contentMode = .scaleAspectFit
+        memedImage.layer.cornerRadius = 10
+        memedImage.layer.borderColor = UIColor.black.cgColor
+        memedImage.layer.borderWidth = 5
+        memedImage.image = meme.memedImage
     }
     
 }
