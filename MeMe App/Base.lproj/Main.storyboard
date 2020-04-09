@@ -249,7 +249,7 @@
         <!--Meme Detail View Controller-->
         <scene sceneID="hBR-wq-B1b">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailViewController" id="7No-oC-fdT" customClass="MemeDetailViewController" customModule="MeMe_App_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7No-oC-fdT" customClass="MemeDetailViewController" customModule="MeMe_App_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rr3-hA-fMs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

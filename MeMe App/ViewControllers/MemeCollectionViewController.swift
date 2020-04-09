@@ -19,8 +19,8 @@ class MemeCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let uiNib = UINib(nibName: "MemeCollectionViewCell", bundle: Bundle(for: MemeCollectionViewController.self))
-        collectionView.register(uiNib, forCellWithReuseIdentifier: "MemeCollectionViewCell")
+        let uiNib = UINib(nibName: Constants.NibNames.memeCollectionCell, bundle: Bundle(for: MemeCollectionViewController.self))
+        collectionView.register(uiNib, forCellWithReuseIdentifier: Constants.ReuseIdentifiers.memeCollectionCell)
     }
 
     override func viewDidLayoutSubviews() {
@@ -47,7 +47,7 @@ extension MemeCollectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let meme = memes[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeCollectionViewCell", for: indexPath) as? MemeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.ReuseIdentifiers.memeCollectionCell, for: indexPath) as? MemeCollectionViewCell
         cell?.set(image: meme.memedImage)
         return cell!
     }

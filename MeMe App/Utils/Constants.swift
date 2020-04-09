@@ -32,9 +32,16 @@ struct Constants {
     
     struct NibNames {
         static let memeTableCell = "MemeTableViewCell"
+        static let memeCollectionCell = "MemeCollectionViewCell"
     }
     
     struct ReuseIdentifiers {
         static let memeTableCell = "memeTableCell"
+        static let memeCollectionCell = "MemeCollectionViewCell"
+    }
+    
+    struct storyBoardsIdentifiers {
+        static let detailMemeView = "MemeDetailViewController"
+        static let memeEditor = "MemeEditorViewController"
     }
 }

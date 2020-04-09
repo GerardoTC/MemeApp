@@ -16,7 +16,7 @@ class TabsViewController: UITabBarController {
         // Do any additional setup after loading the view.
     }
     @IBAction func showMemeEditor() {
-        let memeEditor = (storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController"))!
+        let memeEditor = (storyboard?.instantiateViewController(withIdentifier: Constants.storyBoardsIdentifiers.memeEditor))!
         memeEditor.modalPresentationStyle = .fullScreen
         self.present(memeEditor, animated: true, completion: nil)
     }

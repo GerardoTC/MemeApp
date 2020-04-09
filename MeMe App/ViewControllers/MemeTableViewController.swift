@@ -64,3 +64,10 @@ extension MemeTableViewController: UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
 }
+
+extension MemeTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        storyboard?.instantiateViewController(withIdentifier: Constants.storyBoardsIdentifiers.detailMemeView)
+    }
+}
